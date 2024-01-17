@@ -24,6 +24,7 @@ a {
 .header {
     max-width: 1440px;
     margin: 0 auto;
+    display: grid;
 }
 
 .header-container {
@@ -49,6 +50,31 @@ a {
     padding: 35px 34px;
     text-align: center;
     border-radius: 10px;
+    position: fixed;
+    animation: slideDown .5s forwards;
+    left: 80%;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    max-height: 200px;
+    opacity: 1;
+  }
+}
+
+.navigation .navbar {
+  opacity: 0;
+  transform: translate3d(-30px, 0, 0);
+  transition: .3s;
+}
+
+.navigation .navbar.ativo {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .navbar li + li {
@@ -67,4 +93,10 @@ line-height: 13px; /* 92.857% */
     color: #00754A;
 }
 
+/* media query 800px */
 
+@media (max-width: 800px) {
+    .navbar.ativo {
+        left: 50%;
+    }
+}
