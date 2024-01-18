@@ -19,11 +19,36 @@
 }
 
 .lista-popup.ativo {
-    max-width: 50%;
+    max-width: 70%;
     margin: 0 auto;
     height: 600px;
     position: relative;
-    background: aqua;
+    border-radius: 10px;
+    background: #F0F0F3;
     transition: .3s ease-out;
     opacity: 1;
+    box-shadow: 5px 5px 20px 0px rgba(174, 174, 192, 0.50), -5px -5px 20px 0px #FFF;
+    animation: slideDown .5s forwards;
 }
+
+@keyframes slideDown {
+    from {
+      opacity: 0;
+      max-height: 0;
+    }
+    to {
+      max-height: 600px;
+      opacity: 1;
+    }
+  }
+  
+  .lista-popup {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+    transition: .3s;
+  }
+  
+  .lista-popup.ativo {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
