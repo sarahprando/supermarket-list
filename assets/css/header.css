@@ -1,0 +1,29 @@
+.header {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-lista-completa {
+    background: transparent;
+    cursor: pointer;
+}
+
+.lista-popup {
+    opacity: 0;
+}
+
+.lista-popup.ativo {
+    max-width: 50%;
+    margin: 0 auto;
+    height: 600px;
+    position: relative;
+    background: aqua;
+    transition: .3s ease-out;
+    opacity: 1;
+}

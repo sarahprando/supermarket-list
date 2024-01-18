@@ -1,4 +1,4 @@
-function activeNav() {
-    const ativarMenu = document.querySelector('.navigation nav');
-    ativarMenu.classList.toggle('ativo')
+function activaListaCompleta() {
+    const ativaLista = document.querySelector('.lista-popup');
+    ativaLista.classList.toggle('ativo')
 }
