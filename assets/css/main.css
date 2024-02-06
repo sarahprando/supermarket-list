@@ -1,0 +1,23 @@
+.navlist {
+    max-width: 1440px;
+    margin: 0 auto;
+    font-family: 'Poppins',sans-serif;
+    font-size: 1rem;
+    color: #677278;
+}
+
+.navlist-itens {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    text-align: center;
+    gap: 80px;
+    margin-top: 115px;
+}
+
+.navlist-itens li {
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.30);
+    padding: 40px;
+    background: #F0F0F3;
+    border-radius: 20px;
+} 
