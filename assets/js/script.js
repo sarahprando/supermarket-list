@@ -1,4 +1,4 @@
 function openModal() {
-    const modal = document.querySelector('.modal-container')
+    const modal = document.querySelector('.modal')
     modal.classList.toggle('ativo')
 }

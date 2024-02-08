@@ -9,46 +9,68 @@
     align-items: center;
 }
 
-.button-lista-completa {
-    background: transparent;
-    cursor: pointer;
+.wrapper {
+  border-radius: 50%;
+  box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.5);
 }
 
-.lista-popup {
-    opacity: 0;
+.wrapper:hover {
+  box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.3);
 }
 
-.lista-popup.ativo {
-    max-width: 70%;
-    margin: 0 auto;
-    height: 600px;
-    position: relative;
-    border-radius: 10px;
-    background: #F0F0F3;
-    transition: .3s ease-out;
-    opacity: 1;
-    box-shadow: 5px 5px 20px 0px rgba(174, 174, 192, 0.50), -5px -5px 20px 0px #FFF;
-    animation: slideDown .5s forwards;
+.modal__content {
+  border-radius: 10px;
+  padding: 30px;
+  background: #F0F0F3;
+  box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255, 0.2), 5px 5px 10px 0px rgba(174, 174, 192, 0.5);
 }
 
-@keyframes slideDown {
-    from {
-      opacity: 0;
-      max-height: 0;
-    }
-    to {
-      max-height: 600px;
-      opacity: 1;
-    }
-  }
-  
-  .lista-popup {
-    opacity: 0;
-    transform: translate3d(-30px, 0, 0);
-    transition: .3s;
-  }
-  
-  .lista-popup.ativo {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(77, 77, 77, 0.5);
+  transition: all 0.4s;
+}
+ 
+.modal:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.content {
+  border-radius: 4px;
+  position: relative;
+  width: 500px;
+  max-width: 90%;
+  padding: 1em 2em;
+}
+ 
+.footer {
+  text-align: right;
+  margin-top: 50px;
+}
+ 
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #585858;
+  text-decoration: none;
+}
+ 
+.footer-btn-close {
+  width: 150px;
+  padding: 10px;
+  text-decoration: none;
+  background-color: #cfcca8;
+  color: #000000;
+  border-radius: 3px;
+}
