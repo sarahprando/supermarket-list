@@ -1,4 +1,4 @@
-function activaListaCompleta() {
-    const ativaLista = document.querySelector('.lista-popup');
-    ativaLista.classList.toggle('ativo')
+function openModal() {
+    const modal = document.querySelector('.modal-container')
+    modal.classList.toggle('ativo')
 }

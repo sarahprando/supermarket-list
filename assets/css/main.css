@@ -1,6 +1,4 @@
 .navlist {
-    max-width: 1440px;
-    margin: 0 auto;
     font-family: 'Poppins',sans-serif;
     font-size: 1rem;
     color: #677278;
@@ -16,8 +14,31 @@
 }
 
 .navlist-itens li {
-    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.30);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.5);
     padding: 40px;
     background: #F0F0F3;
     border-radius: 20px;
+    transition: 0.3s;
 } 
+
+.navlist-itens li:hover,
+.manipulate-list button:hover {
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.3);
+}
+
+.manipulate-list {
+    display: flex;
+    justify-content: end;
+    gap: 60px;
+}
+
+.manipulate-list button {
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 700;
+    margin-top: 40px;
+    color: #A3ADB2;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.5);
+}
