@@ -1,14 +1,16 @@
 class Lista {
-    constructor(valor) {
-        this.valor = valor
+    constructor(item) {
+        this.item = item
     }
 }
 
-const item = document.getElementById('entrada');
-
-let lista = new Lista(item.value)
-
 function cadastrarItem() {
-    return console.log(item.value);
+    let item = document.getElementById('item')
+    
+    let lista = new Lista(
+        item.value
+    )
+
+    console.log(lista)
 }
 
