@@ -1,0 +1,18 @@
+
+input:focus {
+    border: 0 none;
+    outline: 0;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.2);
+} 
+
+input#item:hover {
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.2);
+}
+
+input#item,
+button.btn{
+    border-radius: 10px;
+    padding: 10px;
+    background: #F0F0F3;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.5);
+}
