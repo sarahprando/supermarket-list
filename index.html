@@ -9,11 +9,14 @@
 
     <!-- links  -->
 
-
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- css and js -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js"></script>
 
     <!-- favicon -->
     <link rel="icon" href="assets/img/favicon.png" type="img/png">
@@ -25,9 +28,61 @@
 </head>
 
 <body>
-        <input type="text" id="item">
-        <button class="btn" id="btn" onclick="cadastrarItem()">Enviar</button>
-    <script src="assets/js/script.js"></script>
+
+    <header id="header" class="header"><!-- header -->
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">
+                    <img src="assets/img/logo.svg" alt="Supermarket">
+                </a>
+            </div>
+            <div class="wrapper">
+                <a href="#demo-modal"><img src="assets/img/hamburguer.svg" alt="Modal"></a>
+            </div>
+
+            <div id="demo-modal" class="modal">
+                <div class="modal__content">
+
+                    <div class="modal__header">
+                        <a href="#" class="modal__header-btn-close"></a>
+                    </div>
+
+                    <a href="#" class="modal__close">&times;</a>
+
+                    <h1>Modal com HTML e CSS</h1>
+
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+
+                </div>
+            </div>
+    </header><!-- end header -->
+
+    <main><!-- main -->
+        <section id="navlist" class="navlist"><!-- section -->
+            <div class="navlist-container">
+                <ul class="navlist-itens">
+                    <li><img src="assets/img/wheat.svg" alt="Wheat">Mercearia</li>
+                    <li><img src="assets/img/fruit.svg" alt="Fruit">Hortifrúti</li>
+                    <li><img src="assets/img/meat.svg" alt="Meat">Carnes</li>
+                    <li><img src="assets/img/bakery.svg" alt="Bakery">Padaria</li>
+                    <li><img src="assets/img/water.svg" alt="Water">Bebidas</li>
+                    <li><img src="assets/img/utilities.svg" alt="Utilities">Utilidades</li>
+                    <li><img src="assets/img/cleaning.svg" alt="Cleaning">Limpeza</li>
+                    <li><img src="assets/img/hygiene.svg" alt="Hygiene">Higiene</li>
+                </ul>
+            </div>
+            <div class="manipulate-list">
+                <button class="add">+</button>
+                <button class="remove">-</button>
+            </div>
+            <input type="text" id="item">
+            <button class="btn" id="btn" onclick="cadastrarItem()">Enviar</button>
+            <script src="assets/js/script.js"></script>
+        </section><!-- end section -->
+    </main><!-- end main -->
+
 </body>
 
 </html>
