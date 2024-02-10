@@ -1,18 +1,67 @@
+.modal-adicionar {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, 0.5);
+    transition: all 0.4s;
+  }
 
-input:focus {
-    border: 0 none;
-    outline: 0;
-    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.2);
-} 
+  .modal-adicionar:target {
+    visibility: visible;
+    opacity: 1;
+  }
 
-input#item:hover {
-    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.2);
+.adicionar-container {
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), 5px 5px 10px 0px rgba(174, 174, 192, 0.5);
+    background: #F0F0F3;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+a.modal__close__add {
+    font-family: 'Poppins',sans-serif;
+    font-weight: 700;
+    color: #A3ADB2;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px;
+}
+
+a.modal__close__add:hover {
+    color: #677278;
+    box-shadow: none;
 }
 
 input#item,
-button.btn{
-    border-radius: 10px;
-    padding: 10px;
+button.btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #677278;
     background: #F0F0F3;
-    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.5);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+button.btn {
+    background: #00754A;
+    color: #fff;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    opacity: 0.9;
+}
+
+.modal__content__add {
+    background: #F0F0F3;
+    border-radius: 10px;
+    padding: 30px;
 }

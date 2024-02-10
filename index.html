@@ -73,13 +73,18 @@
                 </ul>
             </div>
             <div class="manipulate-list">
-                <button class="add">+</button>
-                <button class="remove">-</button>
-            </div>
-            <div class="modal-adicionar">
-                <input type="text" id="item">
-                <button class="btn" id="btn" onclick="cadastrarItem()">Enviar</button>
-            </div>
+                <div class="add wrapper-add">
+                    <a href="#add-modal">+</a>
+                </div>
+                <div class="modal-adicionar" id="add-modal">
+                    <div class="modal__content__add">
+                        <a href="#" class="modal__close__add">&times;</a>
+                        <div class="adicionar-container">
+                            <input type="text" id="item">
+                            <button class="btn" id="btn" onclick="cadastrarItem()">+</button>
+                        </div>
+                    </div>
+                </div>
 
 
         </section><!-- end section -->
