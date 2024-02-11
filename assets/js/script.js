@@ -4,6 +4,15 @@ class Lista {
             this.item = item,
             this.valor = valor
     }
+
+    validarDados() {
+        for (let i in this) {
+            if (this[i] == undefined || this[i] == '' || this[i] == null) {
+                return false
+            }
+        }
+        return true
+    }
 }
 
 class Bd {
@@ -43,11 +52,19 @@ function cadastrarItem() {
         valor.value
     )
 
-    bd.gravar(lista)
+    if (lista.validarDados()) {
+        bd.gravar(lista)
 
-    qntd.value = ''
-    item.value = ''
-    valor.value = ''
+        alert('Registro inserido com sucesso')
+
+        qntd.value = ''
+        item.value = ''
+        valor.value = ''
+
+    } else {
+
+        alert('Erro na inclusão do registro')
+    }
 }
 
 // modal lista completa
