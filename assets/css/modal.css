@@ -1,0 +1,53 @@
+/* ------ modal ------ */
+
+.modal-lista,
+.modal-add {
+  display: none;
+}
+
+.modal-lista.ativo,
+.modal-add.ativo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(77, 77, 77, 0.5);
+  transition: all 0.4s;
+}
+
+.modal-lista-container,
+.modal-add-container {
+  width: 60vh;
+  border-radius: 10px;
+  padding: 30px;
+  background: #f0f0f3;
+  box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), 5px 5px 10px 0px rgba(174, 174, 192, 0.5);
+}
+
+/* ------ btn ------ */
+
+.btn-close,
+.btn-close-add {
+  display: flex;
+  justify-content: end;
+}
+
+.btn-close button,
+.btn-close-add button {
+  font-family: 'Poppins';
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #A3ADB2;
+  cursor: pointer;
+}
+
+.btn-close button:hover,
+.btn-close-add button:hover {
+  color: #677278;
+}
+
