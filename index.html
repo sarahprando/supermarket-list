@@ -7,8 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- links  -->
-
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,27 +33,10 @@
                     <img src="assets/img/logo.svg" alt="Supermarket">
                 </a>
             </div>
-            <div class="wrapper">
-                <a href="#demo-modal"><img src="assets/img/hamburguer.svg" alt="Modal"></a>
+            <div class="btn-lista">
+                <img src="assets/img/hamburguer.svg" alt="">
             </div>
-
-            <div id="demo-modal" class="modal">
-                <div class="modal__content">
-
-                    <div class="modal__header">
-                        <a href="#" class="modal__header-btn-close"></a>
-                    </div>
-
-                    <a href="#" class="modal__close">&times;</a>
-
-                    <h1>Modal com HTML e CSS</h1>
-
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-
-                </div>
-            </div>
+        </div>
     </header><!-- end header -->
 
     <main><!-- main -->
@@ -72,22 +53,41 @@
                     <li><img src="assets/img/hygiene.svg" alt="Hygiene">Higiene</li>
                 </ul>
             </div>
-            <div class="manipulate-list">
-                <div class="add wrapper-add">
-                    <a href="#add-modal">+</a>
-                </div>
-                <div class="modal-adicionar" id="add-modal">
-                    <div class="modal__content__add">
-                        <a href="#" class="modal__close__add">&times;</a>
-                        <div class="adicionar-container">
-                            <input type="text" id="item">
-                            <button class="btn" id="btn" onclick="cadastrarItem()">+</button>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="btn-add">
+                <img src="assets/img/add.svg" alt="">
+            </div>
 
         </section><!-- end section -->
+
+        <div class="modal-lista"> <!-- modal lista completa -->
+            <div class="modal-lista-container">
+                <div class="btn btn-close">
+                    <button class="close">&times;</button>
+                </div>
+                <div class="lista-completa">
+                    <h1>Lista Completa</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos repellat culpa modi dolores
+                        praesentium corporis doloremque cupiditate? Aspernatur molestiae ullam laudantium dolore commodi
+                        nam
+                        ratione ducimus alias modi explicabo. Hic.</p>
+                </div>
+            </div>
+        </div><!-- end modal lista completa -->
+
+        <div class="modal-add"> <!-- modal adicionar item -->
+            <div class="modal-add-container">
+                <div class="btn btn-close-add">
+                    <button class="close">&times;</button>
+                </div>
+                <div class="input-add">
+                    <input type="text" id="qntd" placeholder="2">
+                    <input type="text" id="item" placeholder="Arroz">
+                    <input type="text" id="valor" placeholder="R$ 5,99">
+                    <button class="btn-add-item" onclick="cadastrarItem()">+</button>
+                </div>
+            </div>
+        </div><!-- end modal adicionar item -->
+
     </main><!-- end main -->
     <script src="assets/js/script.js"></script>
 </body>
