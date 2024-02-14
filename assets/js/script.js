@@ -1,5 +1,6 @@
 class Lista {
-    constructor(qntd, item, valor) {
+    constructor(categoria, qntd, item, valor) {
+        this.categoria = categoria
         this.qntd = qntd
         this.item = item
         this.valor = valor
@@ -44,11 +45,13 @@ class Bd {
 let bd = new Bd()
 
 function cadastrarItem() {
+    let categoria = document.getElementById('categoria')
     let qntd = document.getElementById('qntd')
     let item = document.getElementById('item')
     let valor = document.getElementById('valor')
 
     let lista = new Lista(
+        categoria.value,
         qntd.value,
         item.value,
         valor.value
@@ -59,6 +62,7 @@ function cadastrarItem() {
 
         alert('Inserido com sucesso!')
 
+        categoria.value = ''
         qntd.value = ''
         item.value = ''
         valor.value = ''
