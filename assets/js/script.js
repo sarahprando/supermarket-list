@@ -40,6 +40,28 @@ class Bd {
         localStorage.setItem('id', id)
     }
 
+    recuperarRegistros() {
+
+        let listas = Array()
+
+        let id = localStorage.getItem('id')
+
+        for(let i = 1; i <= id; i++) {
+            let lista = JSON.parse(localStorage.getItem(i))
+
+            if(lista === null) {
+                continue
+            }
+
+            lista.id = i
+
+            listas.push(lista)
+        }
+        
+        return listas
+    }
+
+
 }
 
 let bd = new Bd()
@@ -73,6 +95,69 @@ function cadastrarItem() {
 
     }     
 }
+
+
+// carregar lista completa
+
+function carregaListaCompleta(listas = Array(), filtro = false) {
+
+    if(listas.length == 0 && filtro == false){
+		listas = bd.recuperarRegistros() 
+	}
+
+    let listaCompleta = document.getElementById('listaCompleta')
+    listaCompleta.innerHTML = ''
+
+    listas.forEach(function(l) {
+
+        let linha = listaCompleta.insertRow()
+
+        switch(l.categoria) {
+            case '1': l.categoria = 'Mercearia'
+            break
+
+            case '2': l.categoria = 'Hortifrúti'
+            break
+
+            case '3': l.categoria = 'Carnes'
+            break
+
+            case '4': l.categoria = 'Padaria'
+            break
+
+            case '5': l.categoria = 'Bebidas'
+            break
+
+            case '6': l.categoria = 'Utilidades'
+            break
+
+            case '7': l.categoria = 'Limpeza'
+            break
+
+            case '8': l.categoria = 'Higiene'
+            break
+        }
+
+        linha.insertCell(0).innerHTML = l.categoria
+        linha.insertCell(1).innerHTML = l.qntd
+        linha.insertCell(2).innerHTML = l.item
+        linha.insertCell(3).innerHTML = l.valor
+
+        let btn = document.createElement('button')
+        btn.className = 'btn btn-danger'
+        btn.innerHTML = '<i class="fas fa-times"></i>'
+        btn.id = `id_lista_${l.id}`
+        btn.onclick = function() {
+
+            let id = this.id.replace('id_lista_', '')
+
+            bd.remover(id)
+            window.location.reload()
+        }
+        linha.insertCell(4).append(btn)
+    })
+}
+
 
 // modal lista completa
 
