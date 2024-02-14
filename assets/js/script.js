@@ -38,6 +38,7 @@ class Bd {
 
         localStorage.setItem('id', id)
     }
+
 }
 
 let bd = new Bd()
@@ -65,7 +66,7 @@ function cadastrarItem() {
     } else {
 
         alert('Preencher campos corretamente!')
-        
+
     }     
 }
 
@@ -77,7 +78,6 @@ const modalLista = document.querySelector('.modal-lista');
 
 function FModalLista(event) {
     modalLista.classList.toggle('ativo');
-    document.querySelector('.modal-lista-container .lista-completa').innerHTML = 'lista aqui'
 }
 
 btnLista.addEventListener('click', FModalLista);
