@@ -1,18 +1,19 @@
 class Lista {
     constructor(qntd, item, valor) {
-        this.qntd = qntd,
-            this.item = item,
-            this.valor = valor
+        this.qntd = qntd
+        this.item = item
+        this.valor = valor
     }
 
     validarDados() {
-        for (let i in this) {
-            if (this[i] == undefined || this[i] == '' || this[i] == null) {
-                return false
-            }
+        for(let i in this) {
+           if(this[i] == undefined || this[i] == '' || this[i] == null) {
+            return false
+           } 
         }
         return true
     }
+
 }
 
 class Bd {
@@ -52,10 +53,10 @@ function cadastrarItem() {
         valor.value
     )
 
-    if (lista.validarDados()) {
+    if(lista.validarDados()) {
         bd.gravar(lista)
 
-        alert('Registro inserido com sucesso')
+        alert('Inserido com sucesso!')
 
         qntd.value = ''
         item.value = ''
@@ -63,8 +64,9 @@ function cadastrarItem() {
 
     } else {
 
-        alert('Erro na inclusão do registro')
-    }
+        alert('Preencher campos corretamente!')
+        
+    }     
 }
 
 // modal lista completa
