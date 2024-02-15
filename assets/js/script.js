@@ -7,10 +7,10 @@ class Lista {
     }
 
     validarDados() {
-        for(let i in this) {
-           if(this[i] == undefined || this[i] == '' || this[i] == null) {
-            return false
-           } 
+        for (let i in this) {
+            if (this[i] == undefined || this[i] == '' || this[i] == null) {
+                return false
+            }
         }
         return true
     }
@@ -47,10 +47,10 @@ class Bd {
 
         let id = localStorage.getItem('id')
 
-        for(let i = 1; i <= id; i++) {
+        for (let i = 1; i <= id; i++) {
             let lista = JSON.parse(localStorage.getItem(i))
 
-            if(lista === null) {
+            if (lista === null) {
                 continue
             }
 
@@ -58,7 +58,7 @@ class Bd {
 
             listas.push(lista)
         }
-        
+
         return listas
     }
 
@@ -66,7 +66,6 @@ class Bd {
         localStorage.removeItem(id)
         alert('Item removido')
     }
-
 }
 
 let bd = new Bd()
@@ -84,7 +83,7 @@ function cadastrarItem() {
         valor.value
     )
 
-    if(lista.validarDados()) {
+    if (lista.validarDados()) {
         bd.gravar(lista)
 
         alert('Inserido com sucesso!')
@@ -98,7 +97,7 @@ function cadastrarItem() {
 
         alert('Preencher campos corretamente!')
 
-    }     
+    }
 }
 
 
@@ -106,41 +105,41 @@ function cadastrarItem() {
 
 function carregaListaCompleta(listas = Array(), filtro = false) {
 
-    if(listas.length == 0 && filtro == false){
-		listas = bd.recuperarRegistros() 
-	}
+    if (listas.length == 0 && filtro == false) {
+        listas = bd.recuperarRegistros()
+    }
 
     let listaCompleta = document.getElementById('listaCompleta')
     listaCompleta.innerHTML = ''
 
-    listas.forEach(function(l) {
+    listas.forEach(function (l) {
 
         let linha = listaCompleta.insertRow()
 
-        switch(l.categoria) {
+        switch (l.categoria) {
             case '1': l.categoria = 'Mercearia'
-            break
+                break
 
             case '2': l.categoria = 'Hortifrúti'
-            break
+                break
 
             case '3': l.categoria = 'Carnes'
-            break
+                break
 
             case '4': l.categoria = 'Padaria'
-            break
+                break
 
             case '5': l.categoria = 'Bebidas'
-            break
+                break
 
             case '6': l.categoria = 'Utilidades'
-            break
+                break
 
             case '7': l.categoria = 'Limpeza'
-            break
+                break
 
             case '8': l.categoria = 'Higiene'
-            break
+                break
         }
 
         linha.insertCell(0).innerHTML = l.categoria
@@ -152,14 +151,23 @@ function carregaListaCompleta(listas = Array(), filtro = false) {
         btn.className = 'btn-remove'
         btn.innerHTML = '-'
         btn.id = `id_lista_${l.id}`
-        btn.onclick = function() {
+        btn.onclick = function () {
 
             let id = this.id.replace('id_lista_', '')
 
             bd.remover(id)
         }
         linha.insertCell(4).append(btn)
+
+        const valorTotal = listas.reduce((acumulador, id) => {
+            const precoLimpo = +id.valor.replace('R$ ', '').replace(',', '.');
+            return acumulador + precoLimpo;
+          }, 0)
+    
+          let total = document.querySelector('.total')
+          total.innerHTML = `R$ ${valorTotal.toFixed(2)}`
     })
+
 }
 
 
@@ -190,3 +198,4 @@ const modalAdd = document.querySelector('.modal-add');
 btnAdd.addEventListener('click', FModalAdd);
 
 btnCloseAdd.addEventListener('click', FModalAdd);
+

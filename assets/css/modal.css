@@ -84,6 +84,16 @@ button.btn-remove {
   font-size: 1.25rem;
 }
 
-.table td {
+#listaCompleta td {
   border-bottom: 1px solid #dee2e6;
+}
+
+tfoot#total {
+  text-align: center;
+}
+
+tfoot#total th {
+  text-align: end;
+  box-shadow: none;
+  font-size: 1rem;
 }
