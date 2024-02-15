@@ -62,6 +62,18 @@ class Bd {
         return listas
     }
 
+    pesquisar(lista) {
+
+        let listasFiltradas = Array()
+        listasFiltradas = this.recuperarRegistros()
+
+        if(lista.categoria != ''){
+            listasFiltradas = listasFiltradas.filter(l => l.categoria == lista.categoria)
+        }
+
+        return listasFiltradas
+    }
+
     remover(id) {
         localStorage.removeItem(id)
         alert('Item removido')
@@ -103,9 +115,9 @@ function cadastrarItem() {
 
 // carregar lista completa
 
-function carregaListaCompleta(listas = Array(), filtro = false) {
+function carregaListaCompleta(listas = Array()) {
 
-    if (listas.length == 0 && filtro == false) {
+    if (listas.length == 0) {
         listas = bd.recuperarRegistros()
     }
 
@@ -160,12 +172,12 @@ function carregaListaCompleta(listas = Array(), filtro = false) {
         linha.insertCell(4).append(btn)
 
         const valorTotal = listas.reduce((acumulador, id) => {
-            const precoLimpo = +id.valor.replace('R$ ', '').replace(',', '.');
+            const precoLimpo = +id.valor.replace(',', '.');
             return acumulador + precoLimpo;
-          }, 0)
-    
-          let total = document.querySelector('.total')
-          total.innerHTML = `R$ ${valorTotal.toFixed(2)}`
+        }, 0)
+
+        let total = document.querySelector('.total')
+        total.innerHTML = `R$ ${valorTotal.toFixed(2).replace('.', ',')}`
     })
 
 }
@@ -198,4 +210,36 @@ const modalAdd = document.querySelector('.modal-add');
 btnAdd.addEventListener('click', FModalAdd);
 
 btnCloseAdd.addEventListener('click', FModalAdd);
+
+// carrega lista completa por categoria
+
+const mercearia = document.getElementById('mercearia');
+const hortifruti = document.getElementById('hortifruti');
+const carnes = document.getElementById('carnes');
+const padaria = document.getElementById('padaria');
+const bebidas = document.getElementById('bebidas');
+const utilidades = document.getElementById('utilidades');
+const limpeza = document.getElementById('limpeza');
+const higiene = document.getElementById('higiene');
+
+function carregaCategoria() {
+    alert(this.id);
+}
+
+mercearia.addEventListener('click', carregaCategoria);
+
+hortifruti.addEventListener('click', carregaCategoria);
+
+carnes.addEventListener('click', carregaCategoria);
+
+padaria.addEventListener('click', carregaCategoria);
+
+bebidas.addEventListener('click', carregaCategoria);
+
+utilidades.addEventListener('click', carregaCategoria);
+
+limpeza.addEventListener('click', carregaCategoria);
+
+higiene.addEventListener('click', carregaCategoria);
+
 
