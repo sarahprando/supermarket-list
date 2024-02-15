@@ -2,7 +2,7 @@ class Lista {
     constructor(categoria, qntd, item, valor) {
         this.categoria = categoria
         this.qntd = qntd
-        this.item = item
+        this.item = item.charAt(0).toUpperCase() + item.slice(1)
         this.valor = valor
     }
 
@@ -38,6 +38,7 @@ class Bd {
         localStorage.setItem(id, JSON.stringify(l))
 
         localStorage.setItem('id', id)
+
     }
 
     recuperarRegistros() {
@@ -61,6 +62,10 @@ class Bd {
         return listas
     }
 
+    remover(id) {
+        localStorage.removeItem(id)
+        alert('Item removido')
+    }
 
 }
 
@@ -87,7 +92,7 @@ function cadastrarItem() {
         categoria.value = ''
         qntd.value = ''
         item.value = ''
-        valor.value = ''
+        valor.value = 'R$ '
 
     } else {
 
@@ -141,18 +146,17 @@ function carregaListaCompleta(listas = Array(), filtro = false) {
         linha.insertCell(0).innerHTML = l.categoria
         linha.insertCell(1).innerHTML = l.qntd
         linha.insertCell(2).innerHTML = l.item
-        linha.insertCell(3).innerHTML = l.valor
+        linha.insertCell(3).innerHTML = `R$ ${l.valor}`
 
         let btn = document.createElement('button')
-        btn.className = 'btn btn-danger'
-        btn.innerHTML = '<i class="fas fa-times"></i>'
+        btn.className = 'btn-remove'
+        btn.innerHTML = '-'
         btn.id = `id_lista_${l.id}`
         btn.onclick = function() {
 
             let id = this.id.replace('id_lista_', '')
 
             bd.remover(id)
-            window.location.reload()
         }
         linha.insertCell(4).append(btn)
     })

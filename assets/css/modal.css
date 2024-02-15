@@ -38,7 +38,8 @@
 }
 
 .btn-close button,
-.btn-close-add button {
+.btn-close-add button,
+button.btn-remove {
   font-family: 'Poppins';
   font-size: 1.5rem;
   font-weight: 700;
@@ -47,8 +48,13 @@
 }
 
 .btn-close button:hover,
-.btn-close-add button:hover {
+.btn-close-add button:hover,
+button.btn-remove:hover {
   color: #677278;
+}
+
+button.btn-remove {
+  color: brown;
 }
 
 /* ------ lista completa ------ */
@@ -76,10 +82,8 @@
   background: #f0f0f3;
   box-shadow: 0 1px 0 0 #ddd;
   font-size: 1.25rem;
-} 
+}
 
 .table td {
   border-bottom: 1px solid #dee2e6;
 }
-
-

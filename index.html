@@ -59,7 +59,7 @@
 
         </section><!-- end section -->
 
-        <div class="modal-lista" onload="carregaListaCompleta()"> <!-- modal lista completa -->
+        <div class="modal-lista" onclick="carregaListaCompleta()"> <!-- modal lista completa -->
             <div class="modal-lista-container">
                 <div class="btn btn-close">
                     <button class="close">&times;</button>
@@ -73,6 +73,7 @@
                                     <th>Qntd</th>
                                     <th>Item</th>
                                     <th>Valor</th>
+                                    <th></th>
                                 </tr>
                             </thead>
 
@@ -103,7 +104,7 @@
                     </select>
                     <input type="text" id="qntd" placeholder="2">
                     <input type="text" id="item" placeholder="Arroz">
-                    <input type="text" id="valor" placeholder="R$ 5,99">
+                    <input type="text" id="valor" placeholder="R$ ">
                     <button class="btn-add-item" onclick="cadastrarItem()">+</button>
                 </div>
                 <span class="confirmacao"></span>
@@ -112,6 +113,14 @@
     </main><!-- end main -->
 
     <script src="assets/js/script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+    <script>
+        $(function () {
+            $("#valor").maskMoney({ prefix: 'R$ ', allowNegative: true, thousands: '.', decimal: ',', affixesStay: false });
+        }) 
+    </script>
 </body>
 
 </html>
