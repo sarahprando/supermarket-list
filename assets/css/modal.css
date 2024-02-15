@@ -51,3 +51,35 @@
   color: #677278;
 }
 
+/* ------ lista completa ------ */
+
+.lista-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.table {
+  font-family: 'Poppins', sans-serif;
+  color: #677278;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #f0f0f3;
+  box-shadow: 0 1px 0 0 #ddd;
+  font-size: 1.25rem;
+} 
+
+.table td {
+  border-bottom: 1px solid #dee2e6;
+}
+
+

@@ -26,3 +26,12 @@ main {
     max-width: 1440px;
     margin: 0 auto;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(77, 77, 77, 0.1);
+}
