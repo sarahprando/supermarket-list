@@ -12,11 +12,11 @@
 }
 
 #qntd {
-    max-width: 20px;
+    max-width: 25px;
 }
 
 ::placeholder {
-    color: #c1c1c1;
+    color: var(--cor-2);
 }
 
 #qntd::placeholder {
@@ -28,10 +28,7 @@
 #valor,
 #qntd,
 .btn-add-item {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    color: #677278;
-    background: #fff;
+    background: var(--cor-0);
     padding: 10px;
     border-radius: 10px;
 }

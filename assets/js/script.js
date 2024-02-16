@@ -133,7 +133,7 @@ function carregaListaCompleta(listas = Array()) {
         linha.insertCell(3).innerHTML = `R$ ${l.valor}`
 
         let btn = document.createElement('button')
-        btn.className = 'btn-remove'
+        btn.className = 'btn-remove font-3 cor-3'
         btn.innerHTML = '-'
         btn.id = `id_lista_${l.id}`
         btn.onclick = function () {
@@ -228,7 +228,7 @@ function carregaCategoria(elemento){
         linha.insertCell(3).innerHTML = `R$ ${l.valor}`
 
         let btn = document.createElement('button')
-        btn.className = 'btn-remove'
+        btn.className = 'btn-remove font-3 cor-3'
         btn.innerHTML = '-'
         btn.id = `id_lista_${l.id}`
         btn.onclick = function () {

@@ -1,9 +1,3 @@
-.navlist {
-    font-family: 'Poppins',sans-serif;
-    font-size: 1rem;
-    color: #677278;
-}
-
 .navlist-itens {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -14,29 +8,13 @@
 }
 
 .navlist-itens li {
-    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.5);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px var(--cor-0), 5px 5px 10px 0px rgba(174, 174, 192, 0.5);
     padding: 40px;
-    background: #F0F0F3;
+    background: var(--cor-1);
     border-radius: 20px;
     transition: 0.3s;
 } 
 
 .navlist-itens li:hover {
-    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px rgba(255, 255, 255), 5px 5px 10px 0px rgba(174, 174, 192, 0.3);
-}
-
-.manipulate-list {
-    display: flex;
-    justify-content: end;
-}
-
-.manipulate-list a{
-    font-family: 'Poppins',sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #A3ADB2;
-}
-
-.manipulate-list a:hover {
-    color: #677278;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px var(--cor-0), 5px 5px 10px 0px rgba(174, 174, 192, 0.3);
 }

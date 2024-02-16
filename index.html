@@ -40,7 +40,7 @@
     </header><!-- end header -->
 
     <main><!-- main -->
-        <section id="navlist" class="navlist"><!-- section -->
+        <section id="navlist" class="navlist cor-4 font-1"><!-- section -->
             <div class="navlist-container">
                 <ul class="navlist-itens">
                     <li id="mercearia" onclick="carregaCategoria(this)"><img src="assets/img/wheat.svg"
@@ -70,9 +70,9 @@
         <div class="listaCategoria"><!-- modal lista por categoria -->
             <div class="lista-container-categoria">
                 <div class="btn btn-close-categoria">
-                    <button class="close">&times;</button>
+                    <button class="close font-3 cor-3">&times;</button>
                 </div>
-                <table class="table">
+                <table class="table cor-4 font-0">
                     <thead>
                         <tr>
                             <th>Categoria</th>
@@ -98,11 +98,11 @@
         <div class="modal-lista" onclick="carregaListaCompleta()"> <!-- modal lista completa -->
             <div class="modal-lista-container">
                 <div class="btn btn-close">
-                    <button class="close">&times;</button>
+                    <button class="close font-3 cor-3">&times;</button>
                 </div>
                 <div class="lista-completa">
                     <div class="lista-container">
-                        <table class="table">
+                        <table class="table cor-4 font-0">
                             <thead>
                                 <tr>
                                     <th>Categoria</th>
@@ -130,10 +130,10 @@
         <div class="modal-add"> <!-- modal adicionar item -->
             <div class="modal-add-container">
                 <div class="btn btn-close-add">
-                    <button class="close">&times;</button>
+                    <button class="close font-3 cor-3">&times;</button>
                 </div>
                 <div class="input-add">
-                    <select name="categoria" id="categoria">
+                    <select name="categoria" id="categoria" class="font-1 cor-4">
                         <option value="">Categoria</option>
                         <option value="mercearia">Mercearia</option>
                         <option value="hortifruti">Hortifrúti</option>
@@ -144,10 +144,10 @@
                         <option value="limpeza">Limpeza</option>
                         <option value="higiene">Higiene</option>
                     </select>
-                    <input type="text" id="qntd" placeholder="2">
-                    <input type="text" id="item" placeholder="Arroz">
-                    <input type="text" id="valor" placeholder="R$ ">
-                    <button class="btn-add-item" onclick="cadastrarItem()">+</button>
+                    <input type="text" class="font-1 cor-4" id="qntd" placeholder="2">
+                    <input type="text" class="font-1 cor-4" id="item" placeholder="Arroz">
+                    <input type="text" class="font-1 cor-4" id="valor" placeholder="R$ ">
+                    <button class="btn-add-item font-1 cor-1" onclick="cadastrarItem()">+</button>
                 </div>
                 <span class="confirmacao"></span>
             </div>

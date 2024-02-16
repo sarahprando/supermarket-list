@@ -28,9 +28,11 @@
   width: 70vh;
   border-radius: 10px;
   padding: 30px 30px 35px;
-  background: #f0f0f3;
+  background: var(--cor-1);
   box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), 5px 5px 10px 0px rgba(174, 174, 192, 0.5);
 }
+
+/* ------ end modal ------ */
 
 /* ------ btn ------ */
 
@@ -45,10 +47,6 @@
 .btn-close-add button,
 .btn-close-categoria button,
 button.btn-remove {
-  font-family: 'Poppins';
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #A3ADB2;
   cursor: pointer;
 }
 
@@ -56,14 +54,16 @@ button.btn-remove {
 .btn-close-add button:hover,
 .btn-close-categoria button:hover,
 button.btn-remove:hover {
-  color: #677278;
+  color: var(--cor-4);
 }
 
 button.btn-remove {
   color: brown;
 }
 
-/* ------ lista completa ------ */
+/* ------ end btn ------ */
+
+/* ----- lista completa e categoria ----- */
 
 .lista-container,
 .lista-container-categoria {
@@ -76,17 +76,14 @@ button.btn-remove {
 }
 
 .table {
-  font-family: 'Poppins', sans-serif;
-  color: #677278;
   text-align: center;
-  font-size: 0.9rem;
 }
 
 .table th {
   position: sticky;
   top: 0;
   z-index: 2;
-  background: #f0f0f3;
+  background: var(--cor-1);
   box-shadow: 0 1px 0 0 #ddd;
   font-size: 1.25rem;
 }
@@ -107,3 +104,5 @@ tfoot#total-categoria th {
   box-shadow: none;
   font-size: 1rem;
 }
+
+/* ----- end lista completa e categoria ----- */

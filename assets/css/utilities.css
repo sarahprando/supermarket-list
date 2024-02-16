@@ -1,0 +1,51 @@
+/* ----- color ----- */
+
+:root {
+    --cor-0: #fff;
+    --cor-1: #F0F0F3;
+    --cor-2: #c1c1c1;
+    --cor-3: #A3ADB2;
+    --cor-4: #677278;
+}
+
+.cor-0 {
+    color: var(--cor-0)
+}
+
+.cor-1 {
+    color: var(--cor-1);
+}
+
+.cor-2 {
+    color: var(--cor-2);
+}
+
+.cor-3 {
+    color: var(--cor-3);
+}
+
+.cor-4 {
+    color: var(--cor-4);
+}
+
+/* ----- end color ----- */
+
+/* ----- typography ----- */
+
+.font-0 {
+    font: 400 0.9rem/1.35 'Poppins', sans-serif;
+}
+
+.font-1 {
+    font: 400 1rem/1.35 'Poppins', sans-serif;
+}
+
+.font-2 {
+    font: 400 1.25rem/1.35 'Poppins', sans-serif;
+}
+
+.font-3 {
+    font: 700 1.5rem/1.35 'Poppins', sans-serif;
+}
+
+/* ----- end typography ----- */

@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #F0F0F3;
+    background: var(--cor-1);
 }
 
 img {
