@@ -25,7 +25,6 @@
 .modal-lista-container,
 .modal-add-container,
 .lista-container-categoria {
-  width: 70vh;
   border-radius: 10px;
   padding: 30px 30px 35px;
   background: var(--cor-1);
@@ -77,6 +76,7 @@ button.btn-remove {
 
 .table {
   text-align: center;
+  width: 60vh;
 }
 
 .table th {
@@ -86,7 +86,9 @@ button.btn-remove {
   background: var(--cor-1);
   box-shadow: 0 1px 0 0 #ddd;
   font-size: 1.25rem;
+  padding: 5px;
 }
+
 
 #listaCompleta td,
 #listaCategoria td {
@@ -106,3 +108,51 @@ tfoot#total-categoria th {
 }
 
 /* ----- end lista completa e categoria ----- */
+
+/* ----- media query 600px ----- */
+
+@media (max-width: 600px) {
+
+  .modal-lista.ativo,
+  .modal-add.ativo,
+  .listaCategoria.ativo {
+    padding: 15px;
+  }
+
+  .modal-lista-container,
+  .modal-add-container,
+  .lista-container-categoria {
+    padding: 15px 15px 30px;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    max-width: fit-content;
+  }
+
+  .table th,
+  tfoot#total th,
+  tfoot#total-categoria th {
+    font-size: 1rem;
+    padding: 5px;
+  }
+
+  .table {
+    width: max-content;
+  }
+
+  .lista-completa {
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+/* ----- media query 400px ----- */
+
+@media (max-width: 400px) {
+
+  .lista-container,
+  .lista-container-categoria {
+    justify-content: start;
+  }
+
+}

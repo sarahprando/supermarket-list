@@ -18,3 +18,16 @@
 .navlist-itens li:hover {
     box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.01), -5px -5px 10px 0px var(--cor-0), 5px 5px 10px 0px rgba(174, 174, 192, 0.3);
 }
+
+/* ----- media query 1200px ----- */
+
+@media (max-width: 1200px) {
+    .navlist-itens {
+        gap: 30px;
+        padding: 30px;
+        margin-top: 80px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+}

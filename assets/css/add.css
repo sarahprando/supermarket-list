@@ -1,7 +1,6 @@
 .btn-add {
     display: flex;
     justify-content: end;
-    margin-top: 30px;
 }
 
 .input-add {
@@ -12,15 +11,11 @@
 }
 
 #qntd {
-    max-width: 25px;
+    width: 25px;
 }
 
 ::placeholder {
     color: var(--cor-2);
-}
-
-#qntd::placeholder {
-    text-align: center;
 }
 
 #categoria,
@@ -41,4 +36,24 @@
 
 .btn-add-item:hover {
     opacity: 0.9;
+}
+
+/* ----- media query 800px ----- */
+
+@media (max-width: 800px) {
+    .input-add {
+        display: flex;
+        flex-wrap: wrap;
+        width: 250px;
+    }
+
+    #categoria,
+    #item,
+    #valor,
+    #qntd,
+    .btn-add-item {
+        width: 100%;
+    }
+
+
 }
