@@ -1,12 +1,14 @@
 /* ------ modal ------ */
 
 .modal-lista,
-.modal-add {
+.modal-add,
+.listaCategoria {
   display: none;
 }
 
 .modal-lista.ativo,
-.modal-add.ativo {
+.modal-add.ativo,
+.listaCategoria.ativo {
   position: absolute;
   top: 0;
   right: 0;
@@ -21,7 +23,8 @@
 }
 
 .modal-lista-container,
-.modal-add-container {
+.modal-add-container,
+.lista-container-categoria {
   width: 70vh;
   border-radius: 10px;
   padding: 30px 30px 35px;
@@ -32,13 +35,15 @@
 /* ------ btn ------ */
 
 .btn-close,
-.btn-close-add {
+.btn-close-add,
+.btn-close-categoria {
   display: flex;
   justify-content: end;
 }
 
 .btn-close button,
 .btn-close-add button,
+.btn-close-categoria button,
 button.btn-remove {
   font-family: 'Poppins';
   font-size: 1.5rem;
@@ -49,6 +54,7 @@ button.btn-remove {
 
 .btn-close button:hover,
 .btn-close-add button:hover,
+.btn-close-categoria button:hover,
 button.btn-remove:hover {
   color: #677278;
 }
@@ -59,7 +65,8 @@ button.btn-remove {
 
 /* ------ lista completa ------ */
 
-.lista-container {
+.lista-container,
+.lista-container-categoria {
   display: grid;
   align-items: center;
   justify-content: center;
@@ -84,15 +91,18 @@ button.btn-remove {
   font-size: 1.25rem;
 }
 
-#listaCompleta td {
+#listaCompleta td,
+#listaCategoria td {
   border-bottom: 1px solid #dee2e6;
 }
 
-tfoot#total {
+tfoot#total,
+tfoot#total-categoria {
   text-align: center;
 }
 
-tfoot#total th {
+tfoot#total th,
+tfoot#total-categoria th {
   text-align: end;
   box-shadow: none;
   font-size: 1rem;

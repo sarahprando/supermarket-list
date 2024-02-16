@@ -43,14 +43,22 @@
         <section id="navlist" class="navlist"><!-- section -->
             <div class="navlist-container">
                 <ul class="navlist-itens">
-                    <li id="mercearia"><img src="assets/img/wheat.svg" alt="Wheat">Mercearia</li>
-                    <li id="hortifruti"><img src="assets/img/fruit.svg" alt="Fruit">Hortifrúti</li>
-                    <li id="carnes"><img src="assets/img/meat.svg" alt="Meat">Carnes</li>
-                    <li id="padaria"><img src="assets/img/bakery.svg" alt="Bakery">Padaria</li>
-                    <li id="bebidas"><img src="assets/img/water.svg" alt="Water">Bebidas</li>
-                    <li id="utilidades"><img src="assets/img/utilities.svg" alt="Utilities">Utilidades</li>
-                    <li id="limpeza"><img src="assets/img/cleaning.svg" alt="Cleaning">Limpeza</li>
-                    <li id="higiene"><img src="assets/img/hygiene.svg" alt="Hygiene">Higiene</li>
+                    <li id="mercearia" onclick="carregaCategoria(this)"><img src="assets/img/wheat.svg"
+                            alt="Wheat">Mercearia</li>
+                    <li id="hortifruti" onclick="carregaCategoria(this)"><img src="assets/img/fruit.svg"
+                            alt="Fruit">Hortifrúti</li>
+                    <li id="carnes" onclick="carregaCategoria(this)"><img src="assets/img/meat.svg" alt="Meat">Carnes
+                    </li>
+                    <li id="padaria" onclick="carregaCategoria(this)"><img src="assets/img/bakery.svg"
+                            alt="Bakery">Padaria</li>
+                    <li id="bebidas" onclick="carregaCategoria(this)"><img src="assets/img/water.svg"
+                            alt="Water">Bebidas</li>
+                    <li id="utilidades" onclick="carregaCategoria(this)"><img src="assets/img/utilities.svg"
+                            alt="Utilities">Utilidades</li>
+                    <li id="limpeza" onclick="carregaCategoria(this)"><img src="assets/img/cleaning.svg"
+                            alt="Cleaning">Limpeza</li>
+                    <li id="higiene" onclick="carregaCategoria(this)"><img src="assets/img/hygiene.svg"
+                            alt="Hygiene">Higiene</li>
                 </ul>
             </div>
             <div class="btn-add">
@@ -58,6 +66,34 @@
             </div>
 
         </section><!-- end section -->
+
+        <div class="listaCategoria"><!-- modal lista por categoria -->
+            <div class="lista-container-categoria">
+                <div class="btn btn-close-categoria">
+                    <button class="close">&times;</button>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Qntd</th>
+                            <th>Item</th>
+                            <th>Valor</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaCategoria">
+                    </tbody>
+                    <tfoot id="total-categoria">
+                        <tr>
+                            <th colspan="3" scope="row">Total:</th>
+                            <td class="total-categoria"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div><!-- modal lista por categoria -->
 
         <div class="modal-lista" onclick="carregaListaCompleta()"> <!-- modal lista completa -->
             <div class="modal-lista-container">
@@ -81,10 +117,10 @@
                             </tbody>
                             <tfoot id="total">
                                 <tr>
-                                  <th colspan="3" scope="row">Total:</th>
-                                  <td class="total"></td>
+                                    <th colspan="3" scope="row">Total:</th>
+                                    <td class="total"></td>
                                 </tr>
-                              </tfoot>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -99,14 +135,14 @@
                 <div class="input-add">
                     <select name="categoria" id="categoria">
                         <option value="">Categoria</option>
-                        <option value="1">Mercearia</option>
-                        <option value="2">Hortifrúti</option>
-                        <option value="3">Carnes</option>
-                        <option value="4">Padaria</option>
-                        <option value="5">Bebidas</option>
-                        <option value="6">Utilidades</option>
-                        <option value="7">Limpeza</option>
-                        <option value="8">Higiene</option>
+                        <option value="mercearia">Mercearia</option>
+                        <option value="hortifruti">Hortifrúti</option>
+                        <option value="carnes">Carnes</option>
+                        <option value="padaria">Padaria</option>
+                        <option value="bebidas">Bebidas</option>
+                        <option value="utilidades">Utilidades</option>
+                        <option value="limpeza">Limpeza</option>
+                        <option value="higiene">Higiene</option>
                     </select>
                     <input type="text" id="qntd" placeholder="2">
                     <input type="text" id="item" placeholder="Arroz">

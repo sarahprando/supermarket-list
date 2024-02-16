@@ -1,6 +1,6 @@
 class Lista {
     constructor(categoria, qntd, item, valor) {
-        this.categoria = categoria
+        this.categoria = categoria.charAt(0).toUpperCase() + categoria.slice(1)
         this.qntd = qntd
         this.item = item.charAt(0).toUpperCase() + item.slice(1)
         this.valor = valor
@@ -112,7 +112,6 @@ function cadastrarItem() {
     }
 }
 
-
 // carregar lista completa
 
 function carregaListaCompleta(listas = Array()) {
@@ -127,32 +126,6 @@ function carregaListaCompleta(listas = Array()) {
     listas.forEach(function (l) {
 
         let linha = listaCompleta.insertRow()
-
-        switch (l.categoria) {
-            case '1': l.categoria = 'Mercearia'
-                break
-
-            case '2': l.categoria = 'Hortifrúti'
-                break
-
-            case '3': l.categoria = 'Carnes'
-                break
-
-            case '4': l.categoria = 'Padaria'
-                break
-
-            case '5': l.categoria = 'Bebidas'
-                break
-
-            case '6': l.categoria = 'Utilidades'
-                break
-
-            case '7': l.categoria = 'Limpeza'
-                break
-
-            case '8': l.categoria = 'Higiene'
-                break
-        }
 
         linha.insertCell(0).innerHTML = l.categoria
         linha.insertCell(1).innerHTML = l.qntd
@@ -211,35 +184,72 @@ btnAdd.addEventListener('click', FModalAdd);
 
 btnCloseAdd.addEventListener('click', FModalAdd);
 
-// carrega lista completa por categoria
 
-const mercearia = document.getElementById('mercearia');
-const hortifruti = document.getElementById('hortifruti');
-const carnes = document.getElementById('carnes');
-const padaria = document.getElementById('padaria');
-const bebidas = document.getElementById('bebidas');
-const utilidades = document.getElementById('utilidades');
-const limpeza = document.getElementById('limpeza');
-const higiene = document.getElementById('higiene');
+// modal lista categoria
 
-function carregaCategoria() {
-    alert(this.id);
+const btnCloseCategoria = document.querySelector('.btn-close-categoria button');
+const modalListaCategoria = document.querySelector('.listaCategoria');
+
+function FModalCategoria(event) {
+    modalListaCategoria.classList.toggle('ativo');
+    window.location.reload();
 }
 
-mercearia.addEventListener('click', carregaCategoria);
+btnCloseCategoria.addEventListener('click', FModalCategoria);
 
-hortifruti.addEventListener('click', carregaCategoria);
 
-carnes.addEventListener('click', carregaCategoria);
+// carrega lista completa por categoria
 
-padaria.addEventListener('click', carregaCategoria);
 
-bebidas.addEventListener('click', carregaCategoria);
+function carregaCategoria(elemento){
 
-utilidades.addEventListener('click', carregaCategoria);
+    modalListaCategoria.classList.toggle('ativo')
 
-limpeza.addEventListener('click', carregaCategoria);
+    let listas = Array()
+    listas = bd.recuperarRegistros();
 
-higiene.addEventListener('click', carregaCategoria);
+    let id = elemento.id
+    id = id.charAt(0).toUpperCase() + id.slice(1)
+
+   let filtradoCategoria = listas.filter( l => l.categoria == id)
+
+   console.log(filtradoCategoria)
+
+   let listaCategoria = document.getElementById('listaCategoria')
+   listaCategoria.innerHTML = ''
+
+    filtradoCategoria.forEach(function (l) {
+
+       let linha = listaCategoria.insertRow()
+
+        linha.insertCell(0).innerHTML = l.categoria
+        linha.insertCell(1).innerHTML = l.qntd
+        linha.insertCell(2).innerHTML = l.item
+        linha.insertCell(3).innerHTML = `R$ ${l.valor}`
+
+        let btn = document.createElement('button')
+        btn.className = 'btn-remove'
+        btn.innerHTML = '-'
+        btn.id = `id_lista_${l.id}`
+        btn.onclick = function () {
+
+            let id = this.id.replace('id_lista_', '')
+
+            bd.remover(id)
+            window.location.reload();
+        }
+        linha.insertCell(4).append(btn)
+
+        const valorTotal = filtradoCategoria.reduce((acumulador, id) => {
+            const precoLimpo = +id.valor.replace(',', '.');
+            return acumulador + precoLimpo;
+        }, 0)
+
+        let totalCategoria = document.querySelector('.total-categoria')
+        totalCategoria.innerHTML = `R$ ${valorTotal.toFixed(2).replace('.', ',')}`
+
+    })
+   
+  }
 
 
